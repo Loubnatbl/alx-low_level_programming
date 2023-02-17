@@ -15,10 +15,10 @@ int main(void)
 		j = i % 10;
 		k = i / 10;
 
-		if (j > k)
+		if (k < j)
 		{
-			putchar(j + '0');
 			putchar(k + '0');
+			putchar(j + '0');
 
 			if (i < 89)
 			{
