@@ -1,26 +1,27 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * print_array - prints n elements of an array of integers
- * @str: the string
+ * @a: array
+ * @n: number of elements of the array to be printed
  * Return: void
  */
 
 void print_array(int *a, int n)
 {
 	int i = 0;
-	int n;
 
-	while (str[i])
-		i++;
-	if (i % 2 == 1)
-		n = (i - 1) / 2;
-	else
-		n = i / 2;
-	while (str[n])
+	if (n >= 0)
 	{
-		_putchar(str[n]);
-		n++;
+		while (i < n)
+		{
+			if (i + 1 < n)
+				printf("%d, ", a[i]);
+			else
+				printf("%d", a[i]);
+			i++;
+		}
 	}
-	_putchar('\n');
+	printf("\n");
 }
