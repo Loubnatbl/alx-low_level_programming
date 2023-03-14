@@ -7,7 +7,6 @@
  *
  * Return: number of words
  */
-
 int word_count(char *str)
 {
 	int count;
@@ -28,27 +27,14 @@ int word_count(char *str)
 	}
 	return (count);
 }
-
-/**
- * free_memo - frees the memory
- * @s: pointer values being passed for freeing
- * @i: counter
- */
-
 void free_memo(char **s, int i)
 {
 	int j;
+
 	for (j = 0; j < i; j++)
 		free(s[j]);
 	free(s);
 }
-
-/**
- * strtow - function that splits string into words
- * @str: string being passed
- * Return: null if string is empty or null or function fails
- */
-
 char **strtow(char *str)
 {
 	int j, c, word_len, words;
@@ -61,12 +47,9 @@ char **strtow(char *str)
 
 	if (words == 0)
 		return (NULL);
-
 	arr = malloc((words + 1) * sizeof(char *));
-
 	if (arr == NULL)
 		return (NULL);
-
 	for (j = 0; str[j] != '\0'; j++)
 	{
 		word_len = 0;
@@ -75,12 +58,11 @@ char **strtow(char *str)
 		else
 		{
 			word_start = str;
-			while(*str != ' ' && *str != '\0')
+			while (*str != ' ' && *str != '\0')
 			{
 				word_len++;
 				str++;
 			}
-
 			arr[j] = malloc((word_len + 1) * sizeof(char));
 
 			if (arr[j] == NULL)
